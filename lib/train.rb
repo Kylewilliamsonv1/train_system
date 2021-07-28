@@ -6,7 +6,7 @@ class Train
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
-    @time = attributes.fetch(:time)
+    @time = attributes.fetch(:time).to_i
     @id = attributes.fetch(:id) 
   end
   def self.all
@@ -18,10 +18,10 @@ class Train
       id = train.fetch("id").to_i
       trains.push(Train.new({:name => name, :time => time, :id => id}))
     end
-    Trains
+    trains
   end
   def save
-    result = DB.exec("INSERT INTO trains (name, time) VALUES ('#{@name}','#{@time}') RETURNING id;")
+    result = DB.exec("INSERT INTO trains (name, time) VALUES ('#{@name}', '#{@time}') RETURNING id;")
     @id = result.first().fetch("id").to_i
   end
   def ==(train_to_compare)
@@ -34,7 +34,7 @@ class Train
     train = DB.exec("SELECT * FROM trains WHERE id = #{id};").first
     name = train.fetch("name")
     time = train.fetch("time").to_i
-    id = train.fetch("id").to_id
+    id = train.fetch("id").to_i
     Train.new({:name => name, :time => time, :id => id})
   end
   def update(name)
@@ -46,29 +46,32 @@ class Train
   #   if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
   #     @name = attributes.fetch(:name)
   #     DB.exec("UPDATE trains SET name = '#{@name}' WHERE id = #{@id};")
-  #   elsif (attributes.has_key?(:album_name)) && (attributes.fetch(:album_name) != nil)
-  #     album_name = attributes.fetch(:album_name)
-  #     album = DB.exec("SELECT * FROM albums WHERE lower(name)='#{album_name.downcase}';").first
-  #     if album != nil
-  #       DB.exec("INSERT INTO albums_Trains (album_id, Train_id) VALUES (#{album['id'].to_i}, #{@id});")
+  #   elsif (attributes.has_key?(:city_name)) && (attributes.fetch(:city_name) != nil)
+  #     city_name = attributes.fetch(:city_name)
+  #     city = DB.exec("SELECT * FROM cities WHERE lower(name)='#{city_name.downcase}';").first
+  #     if city != nil
+  #       DB.exec("INSERT INTO stops (city_id, Train_id) VALUES (#{city['id'].to_i}, #{@id});")
   #     end
   #   end
   # end
 
-  # def albums
-  #   albums = []
-  #   results = DB.exec("SELECT album_id FROM albums_Trains WHERE Train_id = #{@id};")
-  #   results.each() do |result|
-  #     album_id = result.fetch("album_id").to_i()
-  #     album = DB.exec("SELECT * FROM albums WHERE id = #{album_id};")
-  #     name = album.first().fetch("name")
-  #     albums.push(Album.new({:name => name, :id => album_id}))
-  #   end
-  #   albums
-  # end
-  def delete
-    DB.exec("DELETE FROM trains *;")
+  def train
+    cities = []
+    results = DB.exec("SELECT city_id FROM stops WHERE train_id = #{@id};")
+    results.each() do |result|
+      city_id = result.fetch("city_id").to_i()
+      city = DB.exec("SELECT * FROM cities WHERE id = #{city_id};")
+      name = city.first().fetch("name")
+      cities.push(city.new({:name => name, :id => city_id}))
+    end
+    cities
   end
-  
+  def delete
+    DB.exec("DELETE FROM trains WHERE id = #{@id};")
+  end
 
+  # def cities
+  #   City.find_by_train(self.id)
+  # end
+  
 end

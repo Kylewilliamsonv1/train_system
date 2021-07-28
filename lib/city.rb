@@ -23,8 +23,8 @@ class City
     @id = result.first().fetch("id").to_i
   end
 
-  def ==(album_to_compare)
-    self.name() == album_to_compare.name()
+  def ==(city_to_compare)
+    self.name() == city_to_compare.name()
   end
 
   def self.clear
@@ -45,10 +45,10 @@ class City
 
   def delete
     DB.exec("DELETE FROM cities WHERE id = #{@id};")
-    DB.exec("DELETE FROM trains WHERE city_id = #{@id};") 
   end
 
-  def cities
-    City.find_by_city(self.id)
-  end
+  # def train
+  #   Train.find(@city_id)
+  # end
+
 end
