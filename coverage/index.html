@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-07-28T11:29:26-07:00">2021-07-28T11:29:26-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-07-28T13:39:59-07:00">2021-07-28T13:39:59-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  79.42%
+  66.27%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.44
+         1.09
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>243</b> relevant lines,
-    <span class="green"><b>193</b> lines covered</span> and
-    <span class="red"><b>50</b> lines missed. </span>
+    <b>255</b> relevant lines,
+    <span class="green"><b>169</b> lines covered</span> and
+    <span class="red"><b>86</b> lines missed. </span>
     (<span class="red">
-  79.42%
+  66.27%
 </span>
 )
   </div>
@@ -72,34 +72,34 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1c884bf1c8ec6733c50046b1e56f61141b7f5ffb" class="src_link" title="app.rb">app.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">38.46 %</td>
-            <td class="cell--number">77</td>
-            <td class="cell--number">52</td>
+            <td class="red strong cell--number t-file__coverage">37.74 %</td>
+            <td class="cell--number">78</td>
+            <td class="cell--number">53</td>
             <td class="cell--number">20</td>
-            <td class="cell--number">32</td>
+            <td class="cell--number">33</td>
             <td class="cell--number">0.38</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1024fc3b98c8e8571a90204213abd52f8e6cb86b" class="src_link" title="lib/city.rb">lib/city.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">86.49 %</td>
-            <td class="cell--number">62</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">32</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">2.65</td>
+            <td class="red strong cell--number t-file__coverage">73.33 %</td>
+            <td class="cell--number">73</td>
+            <td class="cell--number">45</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">2.20</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#65f4e9ff5e3772ca04eb34a6e4d309165dd2c25c" class="src_link" title="lib/train.rb">lib/train.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">72.92 %</td>
-            <td class="cell--number">132</td>
-            <td class="cell--number">48</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">2.15</td>
+            <td class="red strong cell--number t-file__coverage">43.14 %</td>
+            <td class="cell--number">134</td>
+            <td class="cell--number">51</td>
+            <td class="cell--number">22</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">0.78</td>
             
           </tr>
         
@@ -138,12 +138,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#0c63a9e5431d3478af3c5f42cea86059833430c3" class="src_link" title="spec/train_spec.rb">spec/train_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="red strong cell--number t-file__coverage">69.23 %</td>
             <td class="cell--number">87</td>
             <td class="cell--number">39</td>
-            <td class="cell--number">39</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">0.69</td>
             
           </tr>
         
@@ -169,7 +169,7 @@
     <h3>app.rb</h3>
     <h4>
       <span class="red">
-  38.46%
+  37.74%
 </span>
 
       lines covered
@@ -178,9 +178,9 @@
     
 
     <div class="t-line-summary">
-      <b>52</b> relevant lines.
+      <b>53</b> relevant lines.
       <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>32</b> lines missed.</span>
+      <span class="red"><b>33</b> lines missed.</span>
     </div>
 
     
@@ -472,7 +472,7 @@
 
             
 
-            <code class="ruby">  train = train.new({:name =&gt; name, :id =&gt; nil})</code>
+            <code class="ruby">  time = (params[:train_time]).to_i</code>
           </li>
         </div>
       
@@ -483,7 +483,7 @@
 
             
 
-            <code class="ruby">  train.save()</code>
+            <code class="ruby">  train = Train.new({:name =&gt; name, :time =&gt; time, :id =&gt; nil})</code>
           </li>
         </div>
       
@@ -494,18 +494,18 @@
 
             
 
-            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
+            <code class="ruby">  train.save()</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="missed" data-hits="0" data-linenumber="29">
             
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
           </li>
         </div>
       
@@ -516,12 +516,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
@@ -532,7 +543,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="32">
+          <li class="missed" data-hits="0" data-linenumber="33">
             
             
 
@@ -543,24 +554,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="33">
+          <li class="missed" data-hits="0" data-linenumber="34">
             
             
 
             
 
             <code class="ruby">  erb(:train)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -571,12 +571,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
+          <li class="covered" data-hits="1" data-linenumber="37">
             <span class="hits">1</span>
             
 
@@ -587,7 +598,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="37">
+          <li class="missed" data-hits="0" data-linenumber="38">
             
             
 
@@ -598,7 +609,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="38">
+          <li class="missed" data-hits="0" data-linenumber="39">
             
             
 
@@ -609,7 +620,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -620,7 +631,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -631,7 +642,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="42">
             <span class="hits">1</span>
             
 
@@ -642,24 +653,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="42">
-            
-            
-
-            
-
-            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="43">
             
             
 
             
 
-            <code class="ruby">  @train.update(params[:name])</code>
+            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
           </li>
         </div>
       
@@ -670,18 +670,18 @@
 
             
 
-            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
+            <code class="ruby">  @train.update(params[:name])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="missed" data-hits="0" data-linenumber="45">
             
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
           </li>
         </div>
       
@@ -692,12 +692,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -708,24 +719,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="48">
-            
-            
-
-            
-
-            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="49">
             
             
 
             
 
-            <code class="ruby">  @train.delete()</code>
+            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
           </li>
         </div>
       
@@ -736,18 +736,18 @@
 
             
 
-            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
+            <code class="ruby">  @train.delete()</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="51">
+          <li class="missed" data-hits="0" data-linenumber="51">
             
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  redirect to(&#39;/trains&#39;)</code>
           </li>
         </div>
       
@@ -758,12 +758,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
+          <li class="covered" data-hits="1" data-linenumber="54">
             <span class="hits">1</span>
             
 
@@ -774,7 +785,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="54">
+          <li class="missed" data-hits="0" data-linenumber="55">
             
             
 
@@ -785,7 +796,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
+          <li class="missed" data-hits="0" data-linenumber="56">
             
             
 
@@ -796,7 +807,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="57">
             
             
 
@@ -807,7 +818,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
@@ -818,7 +829,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
+          <li class="covered" data-hits="1" data-linenumber="59">
             <span class="hits">1</span>
             
 
@@ -829,24 +840,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="60">
             
             
 
             
 
-            <code class="ruby">  city = City.new({:name =&gt; params[:city_name], :train_id =&gt; @train.id, :id =&gt; nil})</code>
+            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
           </li>
         </div>
       
@@ -857,7 +857,7 @@
 
             
 
-            <code class="ruby">  city.save()</code>
+            <code class="ruby">  city = City.new({:name =&gt; params[:city_name], :id =&gt; nil})</code>
           </li>
         </div>
       
@@ -868,18 +868,18 @@
 
             
 
-            <code class="ruby">  erb(:train)</code>
+            <code class="ruby">  city.save()</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="missed" data-hits="0" data-linenumber="63">
             
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  erb(:train)</code>
           </li>
         </div>
       
@@ -890,12 +890,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="65">
+          <li class="covered" data-hits="1" data-linenumber="66">
             <span class="hits">1</span>
             
 
@@ -906,24 +917,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="67">
             
             
 
             
 
-            <code class="ruby">  city = City.find(params[:city_id].to_i())</code>
+            <code class="ruby">  @train = Train.find(params[:id].to_i())</code>
           </li>
         </div>
       
@@ -934,7 +934,7 @@
 
             
 
-            <code class="ruby">  city.update(params[:name], @train.id)</code>
+            <code class="ruby">  city = City.find(params[:city_id].to_i())</code>
           </li>
         </div>
       
@@ -945,18 +945,18 @@
 
             
 
-            <code class="ruby">  erb(:train)</code>
+            <code class="ruby">  city.update(params[:name], @train.id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
+          <li class="missed" data-hits="0" data-linenumber="70">
             
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  erb(:train)</code>
           </li>
         </div>
       
@@ -967,12 +967,23 @@
 
             
 
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
+          <li class="covered" data-hits="1" data-linenumber="73">
             <span class="hits">1</span>
             
 
@@ -983,7 +994,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="73">
+          <li class="missed" data-hits="0" data-linenumber="74">
             
             
 
@@ -994,7 +1005,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
+          <li class="missed" data-hits="0" data-linenumber="75">
             
             
 
@@ -1005,7 +1016,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="75">
+          <li class="missed" data-hits="0" data-linenumber="76">
             
             
 
@@ -1016,7 +1027,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
+          <li class="missed" data-hits="0" data-linenumber="77">
             
             
 
@@ -1027,7 +1038,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
@@ -1046,8 +1057,8 @@
   <div class="header">
     <h3>lib/city.rb</h3>
     <h4>
-      <span class="yellow">
-  86.49%
+      <span class="red">
+  73.33%
 </span>
 
       lines covered
@@ -1056,9 +1067,9 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
-      <span class="green"><b>32</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>45</b> relevant lines.
+      <span class="green"><b>33</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
 
     
@@ -1740,7 +1751,128 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def self.find_by_train(trn_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">    cities = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">    returned_cities = DB.exec(&quot;SELECT * FROM stops WHERE train_id = #{trn_id};&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">    returned_cities.each() do |city|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">      name = city.fetch(&quot;name&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">      id = city.fetch(&quot;id&quot;).to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="68">
+            
+            
+
+            
+
+            <code class="ruby">      cities.push(City.new({:name =&gt; name, :id =&gt; id}))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="69">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">    cities</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="73">
             
             
 
@@ -1760,7 +1892,7 @@
     <h3>lib/train.rb</h3>
     <h4>
       <span class="red">
-  72.92%
+  43.14%
 </span>
 
       lines covered
@@ -1769,9 +1901,9 @@
     
 
     <div class="t-line-summary">
-      <b>48</b> relevant lines.
-      <span class="green"><b>35</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <b>51</b> relevant lines.
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>29</b> lines missed.</span>
     </div>
 
     
@@ -1859,8 +1991,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="8">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="6" data-linenumber="8">
+            <span class="hits">6</span>
             
 
             
@@ -1870,19 +2002,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="9">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="6" data-linenumber="9">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    @time = attributes.fetch(:time).to_i</code>
+            <code class="ruby">    @time = attributes.fetch(:time)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="13" data-linenumber="10">
-            <span class="hits">13</span>
+          <li class="covered" data-hits="6" data-linenumber="10">
+            <span class="hits">6</span>
             
 
             
@@ -1914,8 +2046,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="13">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
             
 
             
@@ -1925,8 +2057,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="14">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
             
@@ -1936,8 +2068,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="15">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
             
 
             
@@ -1947,8 +2079,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
-            <span class="hits">3</span>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
             
 
             
@@ -1958,8 +2090,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="17">
-            <span class="hits">3</span>
+          <li class="missed" data-hits="0" data-linenumber="17">
+            
             
 
             
@@ -1969,8 +2101,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="18">
-            <span class="hits">3</span>
+          <li class="missed" data-hits="0" data-linenumber="18">
+            
             
 
             
@@ -1980,8 +2112,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="19">
-            <span class="hits">3</span>
+          <li class="missed" data-hits="0" data-linenumber="19">
+            
             
 
             
@@ -2002,8 +2134,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="21">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
             
 
             
@@ -2035,8 +2167,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="24">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="4" data-linenumber="24">
+            <span class="hits">4</span>
             
 
             
@@ -2046,8 +2178,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="25">
-            <span class="hits">7</span>
+          <li class="missed" data-hits="0" data-linenumber="25">
+            
             
 
             
@@ -2079,8 +2211,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="28">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
             
 
             
@@ -2145,8 +2277,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="34">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="34">
+            
             
 
             
@@ -2156,8 +2288,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="35">
+            
             
 
             
@@ -2167,8 +2299,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="36">
+            
             
 
             
@@ -2178,8 +2310,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="37">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="37">
+            
             
 
             
@@ -2189,8 +2321,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="38">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="38">
+            
             
 
             
@@ -2277,8 +2409,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="46">
+            
             
 
             
@@ -2288,8 +2420,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="47">
+            
             
 
             
@@ -2299,8 +2431,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="48">
+            
             
 
             
@@ -2530,13 +2662,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="69">
+            
             
 
             
 
-            <code class="ruby">  def delete</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2547,18 +2679,18 @@
 
             
 
-            <code class="ruby">    DB.exec(&quot;DELETE FROM trains WHERE id = #{@id};&quot;)</code>
+            <code class="ruby">  def delete</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="71">
+          <li class="missed" data-hits="0" data-linenumber="71">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    DB.exec(&quot;DELETE FROM trains WHERE id = #{@id};&quot;)</code>
           </li>
         </div>
       
@@ -2569,7 +2701,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2580,40 +2712,40 @@
 
             
 
-            <code class="ruby">  # def cities</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="74">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="74">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   train.find_by_train(self.id)</code>
+            
+
+            <code class="ruby">  def cities</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="75">
+          <li class="missed" data-hits="0" data-linenumber="75">
             
             
 
             
 
-            <code class="ruby">  # end</code>
+            <code class="ruby">    binding.pry</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="76">
+          <li class="missed" data-hits="0" data-linenumber="76">
             
             
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">    train.find_by_train(self.id)</code>
           </li>
         </div>
       
@@ -2624,7 +2756,7 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2635,7 +2767,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -2646,7 +2778,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -2668,7 +2800,7 @@
 
             
 
-            <code class="ruby">#######Second Part ########</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2690,7 +2822,7 @@
 
             
 
-            <code class="ruby"># class Train</code>
+            <code class="ruby">#######Second Part ########</code>
           </li>
         </div>
       
@@ -2701,7 +2833,7 @@
 
             
 
-            <code class="ruby">#   attr_reader :id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2712,7 +2844,7 @@
 
             
 
-            <code class="ruby">#   attr_accessor :name, :time</code>
+            <code class="ruby"># class Train</code>
           </li>
         </div>
       
@@ -2723,7 +2855,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#   attr_reader :id</code>
           </li>
         </div>
       
@@ -2734,7 +2866,7 @@
 
             
 
-            <code class="ruby">#   def initialize(attributes)</code>
+            <code class="ruby">#   attr_accessor :name, :time</code>
           </li>
         </div>
       
@@ -2745,7 +2877,7 @@
 
             
 
-            <code class="ruby">#     @name = attributes.fetch(:name)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2756,7 +2888,7 @@
 
             
 
-            <code class="ruby">#     @time = attributes.fetch(:time)</code>
+            <code class="ruby">#   def initialize(attributes)</code>
           </li>
         </div>
       
@@ -2767,7 +2899,7 @@
 
             
 
-            <code class="ruby">#     @id = attributes.fetch(:id) </code>
+            <code class="ruby">#     @name = attributes.fetch(:name)</code>
           </li>
         </div>
       
@@ -2778,7 +2910,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     @time = attributes.fetch(:time)</code>
           </li>
         </div>
       
@@ -2789,7 +2921,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#     @id = attributes.fetch(:id) </code>
           </li>
         </div>
       
@@ -2800,7 +2932,7 @@
 
             
 
-            <code class="ruby">#   def self.all</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -2811,7 +2943,7 @@
 
             
 
-            <code class="ruby">#     returned_trains = DB.exec(&quot;SELECT * FROM trains;&quot;)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2822,7 +2954,7 @@
 
             
 
-            <code class="ruby">#     trains = []</code>
+            <code class="ruby">#   def self.all</code>
           </li>
         </div>
       
@@ -2833,7 +2965,7 @@
 
             
 
-            <code class="ruby">#     returned_trains.each() do |train|</code>
+            <code class="ruby">#     returned_trains = DB.exec(&quot;SELECT * FROM trains;&quot;)</code>
           </li>
         </div>
       
@@ -2844,7 +2976,7 @@
 
             
 
-            <code class="ruby">#       name = train.fetch(&quot;name&quot;)</code>
+            <code class="ruby">#     trains = []</code>
           </li>
         </div>
       
@@ -2855,7 +2987,7 @@
 
             
 
-            <code class="ruby">#       time = train.fetch(&quot;time&quot;).to_i</code>
+            <code class="ruby">#     returned_trains.each() do |train|</code>
           </li>
         </div>
       
@@ -2866,7 +2998,7 @@
 
             
 
-            <code class="ruby">#       id = train.fetch(&quot;id&quot;).to_i</code>
+            <code class="ruby">#       name = train.fetch(&quot;name&quot;)</code>
           </li>
         </div>
       
@@ -2877,7 +3009,7 @@
 
             
 
-            <code class="ruby">#       trains.push(Train.new({:name =&gt; name, :time =&gt; time, :id =&gt; id}))</code>
+            <code class="ruby">#       time = train.fetch(&quot;time&quot;).to_i</code>
           </li>
         </div>
       
@@ -2888,7 +3020,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#       id = train.fetch(&quot;id&quot;).to_i</code>
           </li>
         </div>
       
@@ -2899,7 +3031,7 @@
 
             
 
-            <code class="ruby">#     trains</code>
+            <code class="ruby">#       trains.push(Train.new({:name =&gt; name, :time =&gt; time, :id =&gt; id}))</code>
           </li>
         </div>
       
@@ -2910,7 +3042,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -2921,7 +3053,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     trains</code>
           </li>
         </div>
       
@@ -2932,7 +3064,7 @@
 
             
 
-            <code class="ruby">#   def save</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -2943,7 +3075,7 @@
 
             
 
-            <code class="ruby">#     result = DB.exec(&quot;INSERT INTO trains (name, time) VALUES (&#39;#{@name}&#39;, &#39;#{@time}&#39;) RETURNING id;&quot;)</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -2954,7 +3086,7 @@
 
             
 
-            <code class="ruby">#     @id = result.first().fetch(&quot;id&quot;).to_i</code>
+            <code class="ruby">#   def save</code>
           </li>
         </div>
       
@@ -2965,7 +3097,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     result = DB.exec(&quot;INSERT INTO trains (name, time) VALUES (&#39;#{@name}&#39;, &#39;#{@time}&#39;) RETURNING id;&quot;)</code>
           </li>
         </div>
       
@@ -2976,7 +3108,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     @id = result.first().fetch(&quot;id&quot;).to_i</code>
           </li>
         </div>
       
@@ -2987,7 +3119,7 @@
 
             
 
-            <code class="ruby">#   def ==(train_to_compare)</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -2998,7 +3130,7 @@
 
             
 
-            <code class="ruby">#     self.name() == train_to_compare.name()</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -3009,7 +3141,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#   def ==(train_to_compare)</code>
           </li>
         </div>
       
@@ -3020,7 +3152,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     self.name() == train_to_compare.name()</code>
           </li>
         </div>
       
@@ -3031,7 +3163,7 @@
 
             
 
-            <code class="ruby">#   def self.find(id)</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -3042,7 +3174,7 @@
 
             
 
-            <code class="ruby">#     train = DB.exec(&quot;SELECT * FROM trains WHERE id = #{id};&quot;).first</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -3053,7 +3185,7 @@
 
             
 
-            <code class="ruby">#     name = train.fetch(&quot;name&quot;)</code>
+            <code class="ruby">#   def self.find(id)</code>
           </li>
         </div>
       
@@ -3064,7 +3196,7 @@
 
             
 
-            <code class="ruby">#     time = train.fetch(&quot;time&quot;).to_i</code>
+            <code class="ruby">#     train = DB.exec(&quot;SELECT * FROM trains WHERE id = #{id};&quot;).first</code>
           </li>
         </div>
       
@@ -3075,7 +3207,7 @@
 
             
 
-            <code class="ruby">#     id = train.fetch(&quot;id&quot;)</code>
+            <code class="ruby">#     name = train.fetch(&quot;name&quot;)</code>
           </li>
         </div>
       
@@ -3086,7 +3218,7 @@
 
             
 
-            <code class="ruby">#     Train.new({:name =&gt; name, :time =&gt; time, :id =&gt; id})</code>
+            <code class="ruby">#     time = train.fetch(&quot;time&quot;).to_i</code>
           </li>
         </div>
       
@@ -3097,7 +3229,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     id = train.fetch(&quot;id&quot;)</code>
           </li>
         </div>
       
@@ -3108,7 +3240,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     Train.new({:name =&gt; name, :time =&gt; time, :id =&gt; id})</code>
           </li>
         </div>
       
@@ -3119,7 +3251,7 @@
 
             
 
-            <code class="ruby">#   def update(name)</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -3130,7 +3262,7 @@
 
             
 
-            <code class="ruby">#     @name = name</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -3141,7 +3273,7 @@
 
             
 
-            <code class="ruby">#     DB.exec(&quot;UPDATE trains SET name = &#39;#{@name}&#39; WHERE id = #{@id};&quot;)</code>
+            <code class="ruby">#   def update(name)</code>
           </li>
         </div>
       
@@ -3152,7 +3284,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     @name = name</code>
           </li>
         </div>
       
@@ -3163,7 +3295,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     DB.exec(&quot;UPDATE trains SET name = &#39;#{@name}&#39; WHERE id = #{@id};&quot;)</code>
           </li>
         </div>
       
@@ -3174,7 +3306,7 @@
 
             
 
-            <code class="ruby">#   def delete</code>
+            <code class="ruby">#   end</code>
           </li>
         </div>
       
@@ -3185,7 +3317,7 @@
 
             
 
-            <code class="ruby">#     DB.exec(&quot;DELETE FROM trains WHERE id = #{@id};&quot;)</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -3196,7 +3328,7 @@
 
             
 
-            <code class="ruby">#     DB.exec(&quot;DELETE FROM cities WHERE train_id = #{@id};&quot;) </code>
+            <code class="ruby">#   def delete</code>
           </li>
         </div>
       
@@ -3207,7 +3339,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">#     DB.exec(&quot;DELETE FROM trains WHERE id = #{@id};&quot;)</code>
           </li>
         </div>
       
@@ -3218,12 +3350,34 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">#     DB.exec(&quot;DELETE FROM cities WHERE train_id = #{@id};&quot;) </code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="132">
+            
+            
+
+            
+
+            <code class="ruby">#   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="133">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="134">
             
             
 
@@ -4501,8 +4655,8 @@
   <div class="header">
     <h3>spec/train_spec.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  69.23%
 </span>
 
       lines covered
@@ -4512,8 +4666,8 @@
 
     <div class="t-line-summary">
       <b>39</b> relevant lines.
-      <span class="green"><b>39</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
 
     
@@ -4689,8 +4843,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
             
 
             
@@ -4700,8 +4854,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="17">
+            
             
 
             
@@ -4722,8 +4876,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="19">
+            
             
 
             
@@ -4986,8 +5140,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="43">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
             
 
             
@@ -4997,8 +5151,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="44">
+            
             
 
             
@@ -5008,8 +5162,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
             
 
             
@@ -5085,8 +5239,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="52">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="52">
+            
             
 
             
@@ -5096,8 +5250,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
             
 
             
@@ -5272,8 +5426,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="69">
+            
             
 
             
@@ -5283,8 +5437,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="70">
+            
             
 
             
@@ -5294,8 +5448,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="71">
+            
             
 
             
@@ -5305,8 +5459,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="72">
+            
             
 
             

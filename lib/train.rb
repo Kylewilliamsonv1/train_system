@@ -55,7 +55,7 @@ class Train
     end
   end
 
-  def train
+  def trains
     cities = []
     results = DB.exec("SELECT train_id FROM stops WHERE train_id = #{@id};")
     results.each() do |result|
@@ -66,13 +66,14 @@ class Train
     end
     cities
   end
+
   def delete
     DB.exec("DELETE FROM trains WHERE id = #{@id};")
   end
 
-  # def cities
-  #   train.find_by_train(self.id)
-  # end
+  def cities
+    City.find_by_train(self.id)
+  end
   
 end
 

@@ -1,6 +1,6 @@
 <h2>Train Name: <%= @train.name %></h2>
 
-<h3>train cities</h3>
+<h3>This train services these cities:</h3>
 
   <% if @train.cities %>
     <ul>
@@ -12,11 +12,14 @@
     <p>There are no cities listed for this train yet.</p>
   <% end %>
 
+<br>
+<br>
+
+
 <h4>Add a city:</h4>
 
 <form action="/trains/<%= @train.id %>/cities" method="post">
   <div class="form-group">
-    <label for="city_name">city name</label>
     <input id="city_name" name="city_name" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Add city</button>

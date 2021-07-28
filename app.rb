@@ -41,7 +41,7 @@ end
 
 patch ('/trains/:id') do
   @train = Train.find(params[:id].to_i())
-  @train.update(params[:name])
+  @train.update(params{:name})
   redirect to('/trains')
 end
 
@@ -58,7 +58,7 @@ end
 
 post ('/trains/:id/cities') do
   @train = Train.find(params[:id].to_i())
-  city = City.new({:name => params[:city_name], :train_id => @train.id, :id => nil})
+  city = City.new({:name => params[:city_name], :id => nil})
   city.save()
   erb(:train)
 end
