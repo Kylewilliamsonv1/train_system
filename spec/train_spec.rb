@@ -13,7 +13,6 @@ describe '#Train' do
     it("saves a train") do
       train = Train.new(:name =>"Killers", :time => 1, :id => nil) 
       train.save()
-
       train2 = Train.new(:name =>"Queen", :time => 1, :id => nil) 
       train2.save()
 
@@ -55,26 +54,14 @@ describe '#Train' do
   end
 end
 # describe('#update') do
-#   it("adds an album to an Train") do
-#     Train = Train.new({:name => "John Coltrane", :id => nil})
-#     Train.save()
-#     album = Album.new({:name => "A Love Supreme", :id => nil})
-#     album.save()
-#     Train.update({:album_name => "A Love Supreme"})
-#     expect(Train.albums).to(eq([album]))
+#   it("adds an city to an Train") do
+#     train = Train.new(:name =>"Killers", :time => 1, :id => nil)
+#       train.save()
+#     train.update({:train_name => "Crazy Train"})
+#     expect(train.name).to(eq("Crazy Train"))
 #   end
 # end
 
-describe('#train') do
-  it("list all cities for a train") do
-    train = Train.new(:name =>"Killers", :time => 1,  :id => nil)
-    train.save()
-    album = Album.new({:name => "A Love Supreme", :id => nil})
-    album.save()
-    Train.update({:album_name => "A Love Supreme"})
-    expect(Train.albums).to(eq([album]))
-  end
-end
   describe('#delete') do
     it("deletes an Train by id") do
     train = Train.new(:name =>"Killers", :time => 1, :id => nil)

@@ -38,9 +38,17 @@ class City
     City.new({:name => name, :id => id})
   end
 
-  def update(name)
-    @name = name
-    DB.exec("UPDATE cities SET name = '#{@name}' WHERE id = #{@id};")
+  def update(attributes)
+    if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
+      @name = attributes.fetch(:name)
+      DB.exec("UPDATE cities SET name = '#{@name}' WHERE id = #{@id};")
+    elsif (attributes.has_key?(:city_name)) && (attributes.fetch(:city_name) != nil)
+      city_name = attributes.fetch(:city_name)
+      city = DB.exec("SELECT * FROM cities WHERE lower(name)='#{city_name.downcase}';").first
+      if city != nil
+        DB.exec("INSERT INTO stops (city_id, train_id) VALUES (#{city['id'].to_i}, #{@id});")
+      end
+    end
   end
 
   def delete
