@@ -1,0 +1,24 @@
+body {
+  background-image: url('../images/trains.jpg');
+  background-color: beige;
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  background-color:rgb(245, 245, 220, .9);
+  margin: 5em;
+  text-align: center;
+  padding: 1em;
+}
+#word-nerds {
+  width: 50%
+}
+p {
+  font-size: xx-large;
+}
+h2 {
+  text-align: left;
+  margin-left: 3em;
+}
+h1 {
+  font-weight: bolder;
+}

@@ -1,6 +1,17 @@
 <h1>Travel by Rail</h1>
+<h2></h2>
 
-<h3>Traoms"</h3>
+<% if @trains.any? %>
+  <ul>
+    <% @trains.each do |train| %>
+      <li><a href="/trains/<%= train.id %>"><%= train.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no trains to display at this time.</p>
+<% end %>
+
+<a href="/trains/new">Add a new train</a>
 
 <form action="/trains">
   <div class="form-group">
@@ -10,14 +21,4 @@
   <button type="submit" class="btn">Search</button>
 </form>
 
-<% if @trains.any? %>
-  <ul>
-    <% @trains.each do |train| %>
-      <li><a href="/trains/<%= train.id %>"><%= train.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no records to display.</p>
-<% end %>
 
-<a href="/trains/new">Add a new train</a>

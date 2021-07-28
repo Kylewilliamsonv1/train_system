@@ -23,7 +23,8 @@ end
 
 post ('/trains') do  
   name = params[:train_name]
-  train = train.new({:name => name, :id => nil})
+  time = (params[:train_time]).to_i
+  train = Train.new({:name => name, :time => time, :id => nil})
   train.save()
   redirect to('/trains')
 end

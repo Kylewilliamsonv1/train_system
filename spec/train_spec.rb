@@ -11,9 +11,9 @@ describe '#Train' do
   end
   describe('#save') do
     it("saves a train") do
-      train = Train.new(:name =>"Killers", :time => 1, :id => nil) 
+      train = Train.new({:name =>"Killers", :time => @time, :id => nil}) 
       train.save()
-      train2 = Train.new(:name =>"Queen", :time => 1, :id => nil) 
+      train2 = Train.new({:name =>"Queen", :time => @time, :id => nil}) 
       train2.save()
 
       expect(Train.all).to(eq([train, train2]))
@@ -21,8 +21,8 @@ describe '#Train' do
   end
   describe('#==') do
     it("is the same train if it has the same attributes as another train") do
-      train = Train.new(:name =>"Queen", :time => 1, :id => @id)
-      train2 = Train.new(:name =>"Queen", :time => 1, :id => @id)
+      train = Train.new({:name =>"Queen", :time => @time, :id => @id})
+      train2 = Train.new({:name =>"Queen", :time => @time, :id => @id})
       expect(train).to(eq(train2))
     end
   end
@@ -38,24 +38,24 @@ describe '#Train' do
 #   end
   describe('.find') do
     it("finds an train by id") do
-      train = Train.new(:name =>"Killers", :time => 1, :id => nil)
+      train = Train.new({:name =>"Killers", :time => @time, :id => nil})
       train.save()
-      train2 = Train.new(:name =>"Queen", :time => 1, :id => nil)
+      train2 = Train.new({:name =>"Queen", :time => @time, :id => nil})
       train2.save()
       expect(Train.find(train.id)).to(eq(train))
     end
   end
   describe('#update') do
   it("updates an train by id") do
-    train = Train.new(:name =>"Killers", :time => 1,  :id => nil)
+    train = Train.new({:name =>"Killers", :time => @time,  :id => nil})
     train.save()
-    train.update("The Strokes")
+    train.update({:name =>"The Strokes"})
     expect(train.name).to(eq("The Strokes"))
   end
 end
 # describe('#update') do
 #   it("adds an city to an Train") do
-#     train = Train.new(:name =>"Killers", :time => 1, :id => nil)
+#     train = Train.new(:name =>"Killers", :time => @time, :id => nil)
 #       train.save()
 #     train.update({:train_name => "Crazy Train"})
 #     expect(train.name).to(eq("Crazy Train"))
@@ -64,9 +64,9 @@ end
 
   describe('#delete') do
     it("deletes an Train by id") do
-    train = Train.new(:name =>"Killers", :time => 1, :id => nil)
+    train = Train.new({:name =>"Killers", :time => @time, :id => nil})
     train.save()
-    train2 = Train.new(:name =>"Queen", :time => 1, :id => nil)
+    train2 = Train.new({:name =>"Queen", :time => @time, :id => nil})
     train2.save()
     train.delete()
     expect(Train.all).to(eq([train2]))
