@@ -43,14 +43,15 @@ class Train
   # end
 
   def update(attributes)
+    
     if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
       @name = attributes.fetch(:name)
       DB.exec("UPDATE trains SET name = '#{@name}' WHERE id = #{@id};")
     elsif (attributes.has_key?(:train_name)) && (attributes.fetch(:train_name) != nil)
-      train_name = attributes.fetch(:train_name)
-      train = DB.exec("SELECT * FROM cities WHERE lower(name)='#{train_name.downcase}';").first
+      city_name = attributes.fetch(:city_name) 
+      city = DB.exec("SELECT * FROM cities WHERE lower(name)='#{city_name.downcase}';").first
       if train != nil
-        DB.exec("INSERT INTO stops (train_id, train_id) VALUES (#{train['id'].to_i}, #{@id});")
+        DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train['id'].to_i}, #{@id});")
       end
     end
   end

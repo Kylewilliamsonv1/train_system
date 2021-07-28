@@ -73,14 +73,25 @@ class City
 # end
 
 def self.find_by_train(trn_id)
-    cities = []
-    returned_cities = DB.exec("SELECT * FROM stops WHERE train_id = #{trn_id};")
+    cityArray = []
+    returned_cities = DB.exec("SELECT city_id FROM stops WHERE train_id = '#{trn_id}';")
     returned_cities.each() do |city|
       name = city.fetch("name")
       id = city.fetch("id").to_i
-      cities.push(City.new({:name => name, :id => id}))
+      cityArray.push(City.new({:name => name, :id => id}))
     end
-    cities
+    cityArray
   end
 
 end
+
+
+# SELECT trains.* FROM cities
+# JOIN stops ON (cities.id = stops.city_id)
+# JOIN trains ON (stops.train_id = trains.id)
+# WHERE cities.id = 1;
+
+# SELECT cities.* FROM trains
+# JOIN stops ON (trains.id = stops.train_id)
+# JOIN cities ON (stops.city_id = cities.id)
+# WHERE trains.id = 1;

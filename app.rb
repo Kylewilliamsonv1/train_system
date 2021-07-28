@@ -31,6 +31,7 @@ end
 
 get ('/trains/:id') do
   @train = Train.find(params[:id].to_i())
+  # @city = City.all
   erb(:train)
 end
 

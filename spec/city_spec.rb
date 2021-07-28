@@ -69,6 +69,19 @@ describe '#City' do
     end
   end
 
+  describe('.find_by_train') do
+    it("finds cities for an train") do
+      train2 = Train.new({:name => "Blue", :id => nil})
+      train2.save
+      city = City.new({:name => "Naima", :train_id => @train.id, :id => nil})
+      city.save()
+      city2 = City.new({:name => "California", :train_id => train2.id , :id => nil})
+      city2.save()
+      DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train.id.to_i}, #{city.id.to_i});")
+      expect(City.find_by_train(train2.id)).to(eq([train2]))
+    end
+  end
+
   # describe('#cities') do
   #   it("returns a train's stops") do
   #     city = City.new({:name => "Portland", :id => nil})
