@@ -61,7 +61,7 @@ post ('/trains/:id/cities') do
   @train = Train.find(params[:id].to_i())
   city = City.new({:name => params[:city_name], :id => nil})
   city.save()
-  city.link(@train.id)
+  # city.link(@train.id)
   erb(:train)
 end
 

@@ -1,3 +1,4 @@
+require 'pry'
 class City
   attr_accessor :name
   attr_reader :id
@@ -20,6 +21,7 @@ class City
 
   def save
     result = DB.exec("INSERT INTO cities (name) VALUES ('#{@name}') RETURNING id;")
+    # DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train.id.to_i}, #{city.id.to_i});")
     @id = result.first().fetch("id").to_i
   end
 
@@ -74,12 +76,19 @@ class City
 
   def self.find_by_train(trn_id)
     cityArray = []
+
     returned_cities = DB.exec("SELECT * FROM stops WHERE train_id = #{trn_id};")
-    returned_cities.each() do |city|
-      city = DB.exec("SELECT name FROM cities WHERE id = #{city.fetch("city_id")};").first
-      cityArray.push(city.fetch("name"))
-    end
+    returned_city_id = DB.exec("SELECT city_id FROM stops WHERE train_id = #{trn_id};")
+    cityid = returned_city_id[0].fetch("city_id").to_i
+    # returned_city_id.each() do
+      city = DB.exec("SELECT name FROM cities WHERE id = #{cityid};").first
+      binding.pry
+      if city != nil 
+      cityArray.push(city)
+      end
+    # end
     cityArray
+
   end
 
   def link(trn_id)

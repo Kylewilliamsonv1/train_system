@@ -1,14 +1,12 @@
 <% require 'pry' %>
-
 <h2>Train Name: <%= @train.name %></h2>
 
 <h3>This train services these cities:</h3>
   <% if @train.cities %>
-  <%# <% binding.pry %> %>
     <ul>
       <% @train.cities.each do |city| %>
-      <%# <% binding.pry %> %>
-        <li><a href="/trains/<%= @train.id %>/cities/<%= city.id %>"><%= city.name %></a></li>
+
+        <li><a href="/trains/<%= @train.id %>/cities></a> <%=city %></li>
       <% end %>
     </ul>
   <% else %>
