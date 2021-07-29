@@ -83,7 +83,7 @@ class City
   end
 
   def link(trn_id)
-    DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train.id.to_i}, #{city.id.to_i});")
+    DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{trn_id}, #{trn_id});")
   end
 
 end
