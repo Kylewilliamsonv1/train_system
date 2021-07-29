@@ -9,6 +9,7 @@ class Train
     @time = attributes.fetch(:time)
     @id = attributes.fetch(:id) 
   end
+
   def self.all
     returned_trains = DB.exec("SELECT * FROM trains;")
     trains = []
@@ -20,16 +21,20 @@ class Train
     end
     trains
   end
+  
   def save
     result = DB.exec("INSERT INTO trains (name, time) VALUES ('#{@name}', '#{@time}') RETURNING id;")
     @id = result.first().fetch("id").to_i
   end
+  
   def ==(train_to_compare)
     ((self.name() == train_to_compare.name()) && (self.id() == train_to_compare.id()))
   end
+  
   # def self.clear
   #   DB.exec("DELETE FROM Trains *;")
   # end
+  
   def self.find(id)
     train = DB.exec("SELECT * FROM trains WHERE id = #{id};").first
     name = train.fetch("name")
@@ -37,6 +42,7 @@ class Train
     id = train.fetch("id").to_i
     Train.new({:name => name, :time => time, :id => id})
   end
+  
   # def update(name)
   #   @name = name
   #   DB.exec("UPDATE trains SET name = '#{@name}' WHERE id = #{@id};")
@@ -51,7 +57,7 @@ class Train
       city_name = attributes.fetch(:city_name) 
       city = DB.exec("SELECT * FROM cities WHERE lower(name)='#{city_name.downcase}';").first
       if train != nil
-        DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train['id'].to_i}, #{@id});")
+        DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train.id.to_i}, #{city.id.to_i});")
       end
     end
   end

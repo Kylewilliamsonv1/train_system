@@ -46,7 +46,7 @@ class City
       city_name = attributes.fetch(:city_name)
       city = DB.exec("SELECT * FROM cities WHERE lower(name)='#{city_name.downcase}';").first
       if city != nil
-        DB.exec("INSERT INTO stops (city_id, train_id) VALUES (#{city['id'].to_i}, #{@id});")
+        DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train['id'].to_i}, #{city.id.to_i});")
       end
     end
   end
@@ -72,15 +72,18 @@ class City
 #   end
 # end
 
-def self.find_by_train(trn_id)
+  def self.find_by_train(trn_id)
     cityArray = []
-    returned_cities = DB.exec("SELECT city_id FROM stops WHERE train_id = '#{trn_id}';")
+    returned_cities = DB.exec("SELECT * FROM stops WHERE train_id = #{trn_id};")
     returned_cities.each() do |city|
-      name = city.fetch("name")
-      id = city.fetch("id").to_i
-      cityArray.push(City.new({:name => name, :id => id}))
+      city = DB.exec("SELECT name FROM cities WHERE id = #{city.fetch("city_id")};").first
+      cityArray.push(city.fetch("name"))
     end
     cityArray
+  end
+
+  def link(trn_id)
+    DB.exec("INSERT INTO stops (train_id, city_id) VALUES (#{train.id.to_i}, #{city.id.to_i});")
   end
 
 end
